@@ -3,9 +3,9 @@
 ############################
 
 author:
-  name: KamilPietrzak
+  name: Kamil "Moneta" Pietrzak
   image: author.png
-  greeting: "Your new Qubt site :tada:"
+  greeting: "Dzień dobry, witam serdecznie"
   icon: ":wave:"
 
 ############################
@@ -64,7 +64,7 @@ links:
 ## OpenGraph & Twitter Cards
 ###############################
 
-title: KamilPietrzak-blog
+title: Kamil "Moneta" Pietrzak - Blog
 description: "Site build with Qubt & Hugo"
 images:
   - thumbnail.png

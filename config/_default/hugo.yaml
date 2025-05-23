@@ -3,7 +3,7 @@
 ############################
 
 baseURL: "https://KamilPietrzak.github.io/KamilPietrzak-blog"
-title: KamilPietrzak-blog
+title: 'Kamil "Moneta" Pietrzak'
 
 ############################
 ## MISC
@@ -11,5 +11,5 @@ title: KamilPietrzak-blog
 
 enableEmoji: true
 disableKinds: ["taxonomy", "term"]
-languageCode: "en-us"
+languageCode: "pl"
 enableRobotsTXT: true
