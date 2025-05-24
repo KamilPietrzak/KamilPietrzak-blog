@@ -4,7 +4,7 @@
 
 author:
   name: Kamil "Moneta" Pietrzak
-  image: author.png
+  image: author.webp
   greeting: "Dzień dobry, witam serdecznie"
   icon: ":wave:"
 
@@ -74,4 +74,4 @@ links:
 title: Kamil "Moneta" Pietrzak - Blog
 description: "Site build with Qubt & Hugo"
 images:
-  - thumbnail.png
+  - thumbnail.webp
