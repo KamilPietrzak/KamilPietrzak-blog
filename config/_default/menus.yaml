@@ -12,3 +12,6 @@ main:
 - name: Kontakt
   url: /contact/
   weight: 30
+- name: RSS
+  url: /index.xml
+  weight: 40
