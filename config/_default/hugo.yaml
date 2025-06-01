@@ -1,8 +1,4 @@
-############################
-## CHANGE THESE
-############################
-
-baseURL: "https://KamilPietrzak.github.io/KamilPietrzak-blog"
+baseURL: "https://KamilPietrzak.github.io/KamilPietrzak-blog/"
 title: 'Kamil "Moneta" Pietrzak'
 
 ############################
@@ -13,3 +9,24 @@ enableEmoji: true
 disableKinds: ["taxonomy", "term"]
 languageCode: "pl"
 enableRobotsTXT: true
+
+############################
+## RSS CONFIG
+############################
+
+outputs:
+  home: 
+    - HTML
+    - RSS
+  page:
+    - HTML
+
+outputFormats:
+  RSS:
+    mediaType: "application/rss+xml"
+    baseName: "index"
+    rel: "alternate"
+
+services:
+  rss:
+    limit: 20
