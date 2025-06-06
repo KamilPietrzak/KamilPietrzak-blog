@@ -31,6 +31,11 @@ The best practice is to update to released and tested versions. To update to a s
 ```shell
   hugo mod get github.com/Chrede88/qubt@vX.Y.Z
 ```
+or
+```shell
+hugo mod get -u
+```
+
 Replace X,Y & Z with the corresponding version numbers. You can find the releases [here](https://github.com/chrede88/qubt/releases). Please check if any breaking changes are listed under the release you want to update to, before proceeding.
 
 ---

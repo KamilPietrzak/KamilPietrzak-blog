@@ -3,18 +3,25 @@
 ############################
 
 author:
-  name: KamilPietrzak
-  image: author.png
-  greeting: "Your new Qubt site :tada:"
-  icon: ":wave:"
+  name: Kamil "Moneta" Pietrzak
+  image: author.webp
+  greeting: "Dzień dobry, witam serdecznie"
+  icon: ":coffee:"
 
 ############################
 ## Links
 ############################
 
 links:
-  - github: https://github.com/KamilPietrzak/KamilPietrzak-blog
-  - link: https://github.com/KamilPietrzak/KamilPietrzak-blog#readme
+- github: https://github.com/KamilPietrzak
+- codeberg: https://codeberg.org/KamilPietrzak
+#- mastodon: 
+- bluesky: https://bsky.app/profile/kamilpietrzak.bsky.social
+- linkedin: https://www.linkedin.com/in/kamil-pietrzak-wroc/
+#- pixelfed:
+#- link:
+- email: mailto:kontakt@monetapietrzak.com
+  #- link: 
   # - website: 
   # - x-twitter: 
   # - mastodon: 
@@ -64,7 +71,7 @@ links:
 ## OpenGraph & Twitter Cards
 ###############################
 
-title: KamilPietrzak-blog
+title: Kamil "Moneta" Pietrzak - Blog
 description: "Site build with Qubt & Hugo"
 images:
-  - thumbnail.png
+  - thumbnail.webp
