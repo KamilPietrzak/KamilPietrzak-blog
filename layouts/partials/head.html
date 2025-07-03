@@ -24,26 +24,47 @@
 
 {{/* CSS bundle */}}
 {{ $assets := newScratch }}
-{{ $mainCSS :=resources.Get "css/compiled/main.css" }}
-{{ $assets.Add "css" (slice $mainCSS) }}
+{{ $mainCSS := resources.Get "css/compiled/main.css" }}
+{{ if $mainCSS }}
+  {{ $assets.Add "css" (slice $mainCSS) }}
+{{ else }}
+  <!-- Fallback to CDN for development -->
+  <script src="https://cdn.tailwindcss.com"></script>
+{{ end }}
 {{ $customCSS := resources.Get "css/custom.css" }}
 {{ if $customCSS }}
   {{ $assets.Add "css" (slice $customCSS) }}
 {{ end }}
-{{ $bundleCSS := $assets.Get "css" | resources.Concat "css/main.bundle.css" | resources.Minify | resources.Fingerprint "sha256" }}
-<link type="text/css" rel="stylesheet" href="{{ $bundleCSS.RelPermalink }}" integrity="{{ $bundleCSS.Data.Integrity }}" />
-
-{{/* JS bundle */}}
-{{ $mainJS := resources.Get "js/main.js" }}
-{{ $assets.Add "js" (slice $mainJS) }}
-{{ $themeJS := resources.Get "js/theme.js" }}
-{{ $assets.Add "js" (slice $themeJS) }}
-{{ $customJS := resources.Get "js/custom.js" }}
-{{ if $customJS }}
-  {{ $assets.Add "js" (slice $customJS) }}
+{{ $tagsCSS := resources.Get "css/tags.css" }}
+{{ if $tagsCSS }}
+  {{ $assets.Add "css" (slice $tagsCSS) }}
 {{ end }}
-{{ $bundleJS := $assets.Get "js" | resources.Concat "js/main.bundle.js" | resources.Minify | resources.Fingerprint "sha256" }}
-<script defer src="{{ $bundleJS.RelPermalink }}" integrity="{{ $bundleJS.Data.Integrity }}"></script>
+
+{{ if $mainCSS }}
+  {{ $bundleCSS := $assets.Get "css" | resources.Concat "css/main.bundle.css" | resources.Minify | resources.Fingerprint "sha256" }}
+  <link type="text/css" rel="stylesheet" href="{{ $bundleCSS.RelPermalink }}" integrity="{{ $bundleCSS.Data.Integrity }}" />
+{{ else }}
+  <!-- Standalone CSS for development -->
+  {{ if $tagsCSS }}
+    <link rel="stylesheet" href="{{ $tagsCSS.RelPermalink }}">
+  {{ end }}
+{{ end }}
+
+{{/* JS bundle - if available */}}
+{{ $mainJS := resources.Get "js/main.js" }}
+{{ if $mainJS }}
+  {{ $assets.Add "js" (slice $mainJS) }}
+  {{ $themeJS := resources.Get "js/theme.js" }}
+  {{ if $themeJS }}
+    {{ $assets.Add "js" (slice $themeJS) }}
+  {{ end }}
+  {{ $customJS := resources.Get "js/custom.js" }}
+  {{ if $customJS }}
+    {{ $assets.Add "js" (slice $customJS) }}
+  {{ end }}
+  {{ $bundleJS := $assets.Get "js" | resources.Concat "js/main.bundle.js" | resources.Minify | resources.Fingerprint "sha256" }}
+  <script defer src="{{ $bundleJS.RelPermalink }}" integrity="{{ $bundleJS.Data.Integrity }}"></script>
+{{ end }}
 
 {{/* Load Latex JS if needed */}}
 {{ if .Param "math" }}

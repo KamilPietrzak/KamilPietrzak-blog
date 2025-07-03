@@ -1,7 +1,7 @@
 {{ define "main" }}
-<div class="container mx-auto px-4 py-8">
+<div class="w-full max-w-6xl mx-auto">
   <header class="mb-8">
-    <h1 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+    <h1 class="text-3xl font-bold mb-4">
       Posty oznaczone: <span class="inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm font-medium">{{ .Title }}</span>
     </h1>
     <p class="text-gray-600 dark:text-gray-400">
@@ -20,7 +20,7 @@
         
         <div class="p-6">
           <header class="mb-4">
-            <h2 class="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-2">
+            <h2 class="text-2xl font-semibold mb-2">
               <a href="{{ .Permalink }}" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                 {{ .Title }}
               </a>

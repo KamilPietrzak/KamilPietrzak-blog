@@ -1,0 +1,104 @@
+{{ define "main" }}
+<div class="w-full max-w-6xl mx-auto">
+  <!-- Hero Section -->
+  <div class="text-center mb-12">
+    <h1 class="text-4xl md:text-6xl font-bold mb-4">
+      {{ .Site.Title }}
+    </h1>
+    {{ with .Site.Params.description }}
+      <p class="text-xl text-gray-600 dark:text-gray-400">{{ . }}</p>
+    {{ end }}
+    {{ with .Site.Params.author }}
+      <p class="mt-4 text-lg">
+        {{ with .greeting }}{{ . }}{{ end }}
+        {{ with .icon }}<span class="ml-2">{{ . }}</span>{{ end }}
+      </p>
+    {{ end }}
+  </div>
+
+  <!-- Recent Posts -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-bold mb-8">Najnowsze posty</h2>
+    <div class="space-y-8">
+      {{ $posts := where .Site.RegularPages "Section" "blog" | first 3 }}
+      {{ range $posts }}
+        <article class="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 overflow-hidden">
+          {{ with .Params.cardimage }}
+            <div class="h-48 bg-gray-200 dark:bg-gray-700">
+              <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="w-full h-full object-cover" loading="lazy">
+            </div>
+          {{ end }}
+          
+          <div class="p-6">
+            <header class="mb-4">
+              <h3 class="text-2xl font-semibold mb-2">
+                <a href="{{ .Permalink }}" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                  {{ .Title }}
+                </a>
+              </h3>
+              <div class="flex items-center text-sm text-gray-600 dark:text-gray-400 mb-3">
+                <time datetime="{{ .Date.Format "2006-01-02" }}">
+                  {{ .Date.Format "2 January 2006" }}
+                </time>
+              </div>
+            </header>
+            
+            <div class="text-gray-700 dark:text-gray-300 mb-4">
+              {{ with .Params.summary }}
+                {{ . | truncate 150 }}
+              {{ else }}
+                {{ .Summary | truncate 150 }}
+              {{ end }}
+            </div>
+
+            <div class="flex items-center justify-between">
+              <a href="{{ .Permalink }}" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 font-medium">
+                Czytaj więcej →
+              </a>
+              
+              {{ with .Params.tags }}
+                <div class="flex flex-wrap gap-2">
+                  {{ range (first 3 .) }}
+                    <a href="{{ "/tags/" | relURL }}{{ . | urlize }}" class="inline-block bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 px-2 py-1 rounded text-xs font-medium transition-colors">
+                      {{ . }}
+                    </a>
+                  {{ end }}
+                  {{ if gt (len .) 3 }}
+                    <span class="text-xs text-gray-500">+{{ sub (len .) 3 }}</span>
+                  {{ end }}
+                </div>
+              {{ end }}
+            </div>
+          </div>
+        </article>
+      {{ end }}
+    </div>
+
+    <div class="text-center mt-8">
+      <a href="{{ "/blog/" | relURL }}" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+        Zobacz wszystkie posty
+      </a>
+    </div>
+  </section>
+
+  <!-- Tag Cloud -->
+  {{ $tags := .Site.Taxonomies.tags }}
+  {{ if $tags }}
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-8">Popularne tagi</h2>
+      <div class="flex flex-wrap gap-3 justify-center">
+        {{ range first 10 $tags.ByCount }}
+          <a href="{{ .Page.Permalink }}" class="inline-block bg-blue-100 dark:bg-blue-900 hover:bg-blue-200 dark:hover:bg-blue-800 text-blue-800 dark:text-blue-200 px-4 py-2 rounded-full font-medium transition-colors">
+            {{ .Page.Title }} ({{ .Count }})
+          </a>
+        {{ end }}
+      </div>
+      <div class="text-center mt-6">
+        <a href="{{ "/tags/" | relURL }}" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 font-medium">
+          Zobacz wszystkie tagi →
+        </a>
+      </div>
+    </section>
+  {{ end }}
+</div>
+{{ end }}

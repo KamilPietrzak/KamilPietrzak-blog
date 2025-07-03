@@ -6,6 +6,9 @@ main:
 - name: Blog
   url: /blog/
   weight: 10
+- name: Tagi
+  url: /tags/
+  weight: 15
 - name: O mnie
   url: /about/
   weight: 20
