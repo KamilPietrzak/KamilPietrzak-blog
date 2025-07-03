@@ -6,9 +6,16 @@ title: 'Kamil "Moneta" Pietrzak'
 ############################
 
 enableEmoji: true
-disableKinds: ["taxonomy", "term"]
 languageCode: "pl"
 enableRobotsTXT: true
+
+############################
+## TAXONOMIES
+############################
+
+taxonomies:
+  tag: tags
+  author: authors
 
 ############################
 ## RSS CONFIG

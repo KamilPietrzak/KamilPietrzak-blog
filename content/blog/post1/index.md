@@ -8,6 +8,11 @@ featureimage: photo1.jpeg
 caption: Image caption
 authors:
   - Christian: author.jpeg
+tags:
+  - hugo
+  - blog
+  - images
+  - tutorial
 ---
 Use the shortcode "figArray" to add images to your blog post. Add your images to a subfolder. Call the figArray shortcode using the following syntax:
 
