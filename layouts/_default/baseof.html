@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+  <!-- Navigation -->
+  <header class="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <a href="{{ .Site.BaseURL }}" class="text-xl font-bold text-gray-900 dark:text-gray-100">
+            {{ .Site.Title }}
+          </a>
+        </div>
+        <div class="flex items-center space-x-8">
+          {{ range .Site.Menus.main }}
+            <a href="{{ .URL | relURL }}" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 px-3 py-2 text-sm font-medium transition-colors">
+              {{ .Name }}
+            </a>
+          {{ end }}
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="min-h-screen">
+    <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+      {{ block "main" . }}{{ end }}
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-auto">
+    <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+      <div class="text-center text-gray-600 dark:text-gray-400">
+        <p>&copy; {{ now.Year }} {{ .Site.Title }}. Wszystkie prawa zastrzeżone.</p>
+        {{ with .Site.Params.author.name }}
+          <p class="mt-2 text-sm">Autor: {{ . }}</p>
+        {{ end }}
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
