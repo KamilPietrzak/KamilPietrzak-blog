@@ -8,6 +8,16 @@
   border-top-color: #374151;
 }
 
+/* Share buttons header styling */
+.share-buttons h3 {
+  color: #334155;
+}
+
+.dark .share-buttons h3 {
+  color: #f1f5f9;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
 .share-button {
   display: inline-flex;
   align-items: center;
@@ -18,61 +28,63 @@
   transition: all 0.2s ease-in-out;
   text-decoration: none;
   color: #64748b;
-  border: 2px solid #e2e8f0;
-  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  background-color: transparent;
 }
 
 .dark .share-button {
   color: #94a3b8;
-  border-color: #374151;
-  background-color: #1f2937;
+  border-color: #4b5563;
+  background-color: transparent;
 }
 
 .share-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-decoration: none;
+  background-color: #f8fafc;
 }
 
 .dark .share-button:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  background-color: #374151;
 }
 
 /* Platform-specific colors on hover */
 .share-facebook:hover {
   color: #1877f2;
   border-color: #1877f2;
-  background-color: rgba(24, 119, 242, 0.1);
+  background-color: rgba(24, 119, 242, 0.05);
 }
 
 .share-twitter:hover {
   color: #000000;
   border-color: #000000;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .dark .share-twitter:hover {
   color: #ffffff;
   border-color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .share-linkedin:hover {
   color: #0077b5;
   border-color: #0077b5;
-  background-color: rgba(0, 119, 181, 0.1);
+  background-color: rgba(0, 119, 181, 0.05);
 }
 
 .share-mastodon:hover {
   color: #6364ff;
   border-color: #6364ff;
-  background-color: rgba(99, 100, 255, 0.1);
+  background-color: rgba(99, 100, 255, 0.05);
 }
 
 .share-bluesky:hover {
   color: #0085ff;
   border-color: #0085ff;
-  background-color: rgba(0, 133, 255, 0.1);
+  background-color: rgba(0, 133, 255, 0.05);
 }
 
 /* Mobile responsiveness */
