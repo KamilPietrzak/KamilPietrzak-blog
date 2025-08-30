@@ -4,7 +4,7 @@ type: misc
 
 # change these
 jobTitle: Dzień dobry, witam serdecznie
-name: KamilPietrzak
+name: Kamil "Moneta" Pietrzak
 bio: true
 icon: ":coffee:"
 ---
