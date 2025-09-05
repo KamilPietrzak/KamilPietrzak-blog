@@ -1,0 +1,46 @@
+name: Update Hugo Theme
+
+on:
+  # Uruchamiany ręcznie
+  workflow_dispatch:
+  # Uruchamiany automatycznie raz w miesiącu
+  schedule:
+    - cron: '0 0 1 * *'  # Pierwsze każdego miesiąca
+
+jobs:
+  update-theme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Update theme
+        run: |
+          # Zakładając, że używasz motywu jako modułu Hugo
+          hugo mod get -u ./...
+          
+      - name: Check for changes
+        id: git-check
+        run: |
+          git diff --exit-code || echo "changes=true" >> $GITHUB_OUTPUT
+          
+      - name: Create Pull Request
+        if: steps.git-check.outputs.changes == 'true'
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore: update Hugo theme'
+          title: 'Update Hugo theme to latest version'
+          body: |
+            Automatyczna aktualizacja motywu Hugo.
+            
+            - Zaktualizowano moduły Hugo do najnowszych wersji
+            - Sprawdź podgląd zmian przed zatwierdzeniem
+          branch: update-hugo-theme
+          base: main
