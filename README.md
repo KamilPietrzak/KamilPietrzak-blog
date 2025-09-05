@@ -1,55 +1,64 @@
-# KamilPietrzak-blog
+# Blog autorstwa Kamila Pietrzaka
 
-Please follow the instructions below to finish the setup of your new Qubt site.
+## 🔗 Linki
 
-## Installation
+- **Blog**: [https://monetapietrzak.com](https://monetapietrzak.com)
+- **Oryginalny motyw Qubit**: [https://github.com/Chrede88/qubit](https://github.com/chrede88/qubt)
+- **Hugo**: [https://gohugo.io/](https://gohugo.io/)
+- **Dokumentacja Hugo**: [https://gohugo.io/documentation/](https://gohugo.io/documentation/)
+- **Dokumentacja motywu Qubit**: [https://github.com/Chrede88/qubit/wiki](https://github.com/chrede88/qubt/wiki)
 
-1) Add a LICENSE to your repo.
-2) Clone your version of the template to your local computer:
-```shell
-git clone https://github.com/<username>/<reponame>
+### ℹ️ Dodatkowe o blogu
+
+Blog powstał na silniku **Hugo**. Użytym motywem bloga jest **Qubit**, który został zmodyfikowany przeze mnie. 
+
+- **Hosting**: Cloudflare
+- **Logo**: Obraz wygenerowany przez DALL-E 2
+
+## 🛠️ Komendy
+
+### Uruchomienie serwera lokalnego
+```bash
+hugo server
 ```
-3) Modify `config/_default/hugo.yaml`, `config/_default/params.yaml` and `config/_default/menus.yaml` according to to your needs. Find more info on the theme [wiki](https://github.com/chrede88/qubt/wiki/Configuration).
-4) Add your blog posts to `content/blog/`. See the [wiki](https://github.com/chrede88/qubt/wiki/Content) or example posts for reference.
-5) Modify `content/about.md` so it matches your preferences.
-6) Build a local version of your site by executing `hugo server`. You can see the site by navigating to `localhost:1313` (actual URL will be outputted in the CLI) in a browser.
+Serwer będzie dostępny pod adresem `http://localhost:1313`
 
----
-
-## Configuration
-
-See the [wiki](https://github.com/chrede88/qubt/wiki) for all info about configuration.
-
----
-
-## Update the Theme Version
-
-The theme version used to build the site is defined in `go.mod` file.
-
-The best practice is to update to released and tested versions. To update to a specific version execute the following command in a terminal/commandline (at the root path of your site repo):
-
-```shell
-  hugo mod get github.com/Chrede88/qubt@vX.Y.Z
-```
-or
-```shell
+### Aktualizacja motywu
+Aktualizacja do najnowszej wersji:
+```bash
 hugo mod get -u
 ```
 
-Replace X,Y & Z with the corresponding version numbers. You can find the releases [here](https://github.com/chrede88/qubt/releases). Please check if any breaking changes are listed under the release you want to update to, before proceeding.
+Aktualizacja do konkretnej wersji:
+```bash
+hugo mod get github.com/Chrede88/qubt@vX.Y.Z
+```
+Zastąp `X.Y.Z` numerami odpowiedniej wersji. Lista dostępnych wersji: [releases](https://github.com/chrede88/qubt/releases)
 
----
+### Aktualizacja Hugo
+```bash
+# Na macOS (używając Homebrew)
+brew upgrade hugo
 
-## Deploy on Github Pages
-You can very easily deploy your site using Github Pages. Included in this template is a Github Action workflow that will build and deploy your site to Github Pages automatically :+1:
+# Na Windows (używając Chocolatey)
+choco upgrade hugo
 
-You can find the workflow here `.github/deploymentWorkflow/buildDeploy.yml`. To use this, move it to `.github/workflows/`.
+# Na Linux (używając Snap)
+snap refresh hugo
+```
 
-The workflow is already set up and ready to go, but go through it and spend some time to understand what's going on. Otherwise, it'll always be this black box of magic that you can't fix when it breaks!
+## 📝 Zarządzanie treścią
 
-Last step: Go to Settings -> Pages -> Build and deployment -> Set the Source to "Github Actions".
+- Posty blogowe dodawaj do katalogu `content/blog/`
+- Strona "O mnie" w pliku `content/about.md`
+- Strona "Kontakt" w pliku `content/contact.md`
+- Konfigurację znajdziesz w plikach:
+  - `config/_default/hugo.yaml`
+  - `config/_default/params.yaml`
+  - `config/_default/menus.yaml`
 
-Next time you publish a release this workflow will build and deploy your site :tada:
+> Nowe wpisy należy umieścić w `content/blog/post{{ kolejny numer }}` wraz z plikiem `index.md` i dodatkowymi plikami jak zdjęcia. W `assets/post{{ kolejny numer }}` umieszcza się grafiki banerów i grafiki okładkowe. Więcej przykładów tu: https://github.com/chrede88/qubtTemplate
 
-Your site will be published to the following URL:
-`https://KamilPietrzak.github.io/KamilPietrzak-blog`
+## 📚 Dodatkowe informacje
+
+Więcej informacji o konfiguracji i możliwościach znajdziesz w [dokumentacji motywu](https://github.com/chrede88/qubt/wiki).
