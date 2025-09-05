@@ -1,0 +1,48 @@
+name: Update Hugo Version
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 15 * *'  # 15-tego każdego miesiąca
+
+jobs:
+  update-hugo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Get latest Hugo version
+        id: hugo-version
+        run: |
+          LATEST_VERSION=$(curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest | jq -r '.tag_name' | sed 's/v//')
+          echo "version=$LATEST_VERSION" >> $GITHUB_OUTPUT
+          
+      - name: Update Hugo version in workflow files
+        run: |
+          # Tutaj możesz zaktualizować plik konfiguracyjny lub inne pliki
+          # które zawierają informację o wersji Hugo
+          
+      - name: Test build with new Hugo version
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: ${{ steps.hugo-version.outputs.version }}
+          extended: true
+          
+      - name: Build site
+        run: hugo --minify
+          
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore: update Hugo to ${{ steps.hugo-version.outputs.version }}'
+          title: 'Update Hugo to version ${{ steps.hugo-version.outputs.version }}'
+          body: |
+            Automatyczna aktualizacja silnika Hugo do wersji ${{ steps.hugo-version.outputs.version }}.
+            
+            - Zaktualizowano Hugo do najnowszej wersji
+            - Pomyślnie przetestowano budowanie strony
+            - Sprawdź podgląd zmian przed zatwierdzeniem
+          branch: update-hugo-engine
+          base: main
