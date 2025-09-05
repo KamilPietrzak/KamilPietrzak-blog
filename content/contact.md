@@ -8,7 +8,7 @@ Witaj! Skoro tu dotarłeś, to znaczy że masz jakiś pomysł, problem do rozwi�
 
 ### 📡 Kanały komunikacji
 
-Lubię poszukiwać nowych rozwiązań, a więc i wybór jest. A że często zakładam foliową czapeczkę w kwestiach prywatności i bezpieczeńśtwa danych, to i o bezpieczeńśtwo musiałem zadbać.
+Lubię poszukiwać nowych rozwiązań, a więc i wybór jest. A że często zakładam foliową czapeczkę w kwestiach prywatności i bezpieczeństwa danych, to i o bezpieczeństwa musiałem zadbać.
 
 **:email: Oczywiście klasyka, e-mail musi być**  
 
@@ -20,10 +20,6 @@ Lubię poszukiwać nowych rozwiązań, a więc i wybór jest. A że często zak�
 
 *Signal:* KamilPietrzak.11
 
-**:alien: Dla ludzi takich jak ja, co uważają, że bezpieczeńśtwa nigdy za mało**  
+**:alien: Dla ludzi takich jak ja, co uważają, że bezpieczeństwa nigdy za mało**  
 
 *Threema:* ACVD9K2D
-
-**:globe_with_meridians: Pewnie nic Ci to nie mówi, ale jeśli mówi, to łączy nas więcej niż myślisz**  
-
-*Matrix:* kamil@chat.blackdos.xyz
