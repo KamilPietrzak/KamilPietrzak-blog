@@ -22,8 +22,8 @@ Chcę pisać o technologii, ale w prosty i przystępny sposób. Nie znajdziesz t
 Piszę o inspiracjach, o tym co można zrobić lepiej, jak żyć z technologią w bardziej świadomy sposób. Będą też polecajki. Nie wykluczone, że i miejsce na wiadomości ważne, ale nie powszechne w eterze, też się najdzie. Choć oczywiście, jakieś bardziej techniczne wstawki mogą się przydarzyć, to obiecuję, że będą jasno oznaczone i w rozsądnych dawkach.
 
 **:hammer: Informacje techniczne**
-- Blog pwostał na silniku [Hugo](https://gohugo.io).
-- Uzytym motywem bloga jest [Qubit](https://github.com/chrede88/qubt), który został zmodyfikowany przeze mnie.
+- Blog powstał na silniku [Hugo](https://gohugo.io).
+- Użytym motywem bloga jest [Qubit](https://github.com/chrede88/qubt), który został zmodyfikowany przeze mnie.
 - Repozytorium bloga znajdziesz [tu](https://github.com/KamilPietrzak/KamilPietrzak-blog).
 - Blog hostowany jest przez [Cludflare](https://www.cloudflare.com/pl-pl/)
 - Logo jest obrazem wygenerowanym przez [DALL-E 2](https://openai.com/index/dall-e-2/).
