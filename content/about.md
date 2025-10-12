@@ -25,7 +25,7 @@ Piszę o inspiracjach, o tym, co można zrobić lepiej, jak żyć z technologią
 - Blog powstał na silniku [Hugo](https://gohugo.io).
 - Użytym motywem bloga jest [Qubit](https://github.com/chrede88/qubt), który został zmodyfikowany przeze mnie.
 - Repozytorium bloga znajdziesz [tu](https://github.com/KamilPietrzak/KamilPietrzak-blog).
-- Blog hostowany jest przez [Cludflare](https://www.cloudflare.com/pl-pl/)
+- Blog hostowany jest przez [Cloudflare](https://www.cloudflare.com/pl-pl/)
 - Logo jest obrazem wygenerowanym przez [DALL-E 2](https://openai.com/index/dall-e-2/).
 
 *Ten blog to strefa wolna od telemetrii i cookies. Jeśli jednak złapiesz niechcianego gościa na gorącym uczynku, oznacza to, że przemknęło mi się bez wiedzy. Daj znać, a od razu posprzątam te niechciane elementy.*
