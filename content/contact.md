@@ -12,7 +12,7 @@ Lubię poszukiwać nowych rozwiązań, a więc i wybór jest. A że często zak�
 
 **:email: Oczywiście klasyka, e-mail musi być**  
 
-*Email:* kontakt@monetapietrzak.com
+*Email:* kamil@blackdos.net
 
 *Tak wiem, nie ma klucza GPG. Obiecuję, że dodam.*
 
